@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="HangmanApp">
+    <head>
+        <title>Hangman App</title>
+        {% load staticfiles %}
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.16/angular-ui-router.min.js"></script>
+        <script src="{% static "frontend/app.js" %}"></script>
+    </head>
+
+    {% verbatim %}
+
+    <body>
+        <a ui-sref="home">Home</a>
+        <a ui-sref="game">Game</a>
+        <a ui-sref="contact">Contact</a>
+          
+        <ui-view></ui-view>
+    </body>
+          
+
+    {% endverbatim %}
+</html>

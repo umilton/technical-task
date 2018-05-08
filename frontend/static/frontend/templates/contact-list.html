@@ -1,0 +1,37 @@
+<div ng-controller="ContactController">
+
+    <div>
+        <h1>Contact List</h1>
+    </div>
+
+    <div>
+        <div>
+            <button ng-click="sortBy('name')">Sort By Name</button>
+            <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
+        </div>
+    </div>
+
+    <div>
+        <span ng-repeat="contact in contacts | orderBy:propertyName:reverse">
+            <div>
+                {{ contact.id }}
+                {{ contact.name }}
+                {{ contact.number }}
+            </div>
+        </span>
+    </div>
+
+    <div>
+        <div>
+            Name : 
+            <input type="text" name="name" ng-model="contact.name">
+        </div>
+
+        <div>
+            Number :
+            <input type="text" name="number" ng-model="contact.number">
+        </div>
+        <button ng-click="postContact()">Submit</button>
+    </div>
+
+</div>
